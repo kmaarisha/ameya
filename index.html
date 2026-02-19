@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ameya.agency — Website Copy</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white:#FFFFFF; --off-white:#F8F7F5;
+    --crimson:#8B0000; --crimson-dim:#6B0000;
+    --blue:#1B4FBF; --ink:#111111;
+    --light:#EEEAE6; --border:#DDD8D2; --card:#FAFAF9;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--white); color:var(--ink); font-family:'Josefin Sans',sans-serif; font-size:16px; line-height:1.6; }
+
+  /* NAV */
+  nav { display:flex; justify-content:space-between; align-items:center; padding:14px 48px; border-bottom:2px solid var(--crimson); position:sticky; top:0; background:var(--white); z-index:100; }
+  .nav-logo { font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; font-size: 20px; }
+  .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+  .nav-links a { text-decoration:none; color:var(--ink); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--crimson); }
+  .nav-cta { background:var(--crimson) !important; color:#fff !important; padding:10px 20px; border-radius:2px; }
+
+  /* LAYOUT */
+  .page-section { padding:80px 48px; max-width:1100px; margin:0 auto; }
+
+  .section-divider { width:100%; padding:18px 48px; display:flex; align-items:center; gap:20px; font-size:9px; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; }
+  .section-divider::before,.section-divider::after { content:''; flex:1; height:1px; }
+  .section-divider.red { color:var(--crimson); } .section-divider.red::before,.section-divider.red::after { background:rgba(139,0,0,0.15); }
+  .section-divider.blue { color:var(--blue); } .section-divider.blue::before,.section-divider.blue::after { background:rgba(27,79,191,0.15); }
+  .section-divider.green { color:#2E7D52; } .section-divider.green::before,.section-divider.green::after { background:rgba(46,125,82,0.15); }
+
+  /* COPY BLOCKS */
+  .copy-block { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--crimson); border-radius:0 8px 8px 0; padding:32px 36px; margin-bottom:24px; transition:border-left-color 0.2s,box-shadow 0.2s; }
+  .copy-block:hover { border-left-color:var(--blue); box-shadow:0 4px 20px rgba(139,0,0,0.05); }
+  .copy-block.blue { border-left-color:var(--blue); } .copy-block.blue:hover { border-left-color:var(--crimson); }
+  .copy-block.green { border-left-color:#2E7D52; background:#F2F8F4; border-color:#C2DACC; }
+
+  .block-label { font-size:9px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:var(--crimson); margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; }
+  .block-label.blue { color:var(--blue); } .block-label.green { color:#2E7D52; }
+  .block-tag { font-size:8px; padding:3px 8px; border-radius:2px; letter-spacing:0.14em; font-weight:700; text-transform:uppercase; background:rgba(139,0,0,0.07); color:var(--crimson); }
+  .block-tag.blue { background:rgba(27,79,191,0.07); color:var(--blue); }
+  .block-tag.green { background:rgba(46,125,82,0.07); color:#2E7D52; border:1px solid rgba(46,125,82,0.2); }
+
+  .copy-block h1 { font-weight:700; font-size:clamp(2.4rem,5.5vw,4.8rem); line-height:1.05; letter-spacing:0.05em; text-transform:uppercase; color:var(--crimson); margin-bottom:24px; }
+  .copy-block h1 em { font-style:normal; color:var(--blue); display:block; }
+  .copy-block h2 { font-weight:700; font-size:clamp(1.3rem,3vw,1.9rem); line-height:1.2; letter-spacing:0.05em; text-transform:uppercase; color:var(--crimson); margin-bottom:14px; }
+  .copy-block h2 em { font-style:normal; color:var(--blue); }
+
+  .copy-block p { color:var(--ink); font-size:15px; line-height:1.85; margin-bottom:12px; font-weight:600; letter-spacing:0.02em; }
+  .copy-block p:last-child { margin-bottom:0; }
+  .copy-block p strong { color:var(--crimson); font-weight:700; }
+
+  /* BUTTONS */
+  .btn-primary { background:var(--crimson); color:#fff; padding:14px 28px; font-size:11px; font-weight:700; border:none; border-radius:2px; cursor:pointer; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.2s; }
+  .btn-outline { background:transparent; color:var(--blue); padding:14px 28px; font-size:11px; font-weight:700; border:2px solid var(--blue); border-radius:2px; text-decoration:none; letter-spacing:0.18em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; }
+
+  /* PAIN GRID */
+  .pain-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+  .pain-card { background:var(--white); border:1px solid var(--border); border-radius:6px; padding:20px 22px; display:flex; gap:14px; align-items:flex-start; }
+  .pain-card h4 { font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--crimson); margin-bottom:6px; }
+  .pain-card p { font-size:13px; color:var(--ink); line-height:1.65; font-weight:600; }
+
+  /* FOOTER */
+  footer { background:var(--crimson); color:#fff; padding:56px 48px 40px; text-align:center; }
+  .footer-tagline { font-size:clamp(1rem,2.5vw,1.4rem); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#fff; margin-bottom:32px; line-height:1.4; }
+  .footer-tagline em { font-style:normal; opacity:0.6; }
+
+  @media(max-width:680px) { .pain-grid { grid-template-columns:1fr; } .nav-links { display:none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">AMEYA.AGENCY</div>
+  <ul class="nav-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Real Estate</a></li>
+    <li><a href="#" class="nav-cta">Free Audit →</a></li>
+  </ul>
+</nav>
+
+<section class="page-section">
+  <div class="copy-block">
+    <h1>Most D2C brands<br>don't fail at the product.<br><em>They fail at being found.</em></h1>
+  </div>
+
+  <div class="copy-block">
+    <p>You spent months getting the product right. The formula. The packaging. The pricing. And now it's just... sitting there. Not because it's bad — but because the right people haven't seen it yet.</p>
+    <p style="margin-top:10px;">That's not a product problem. That's a visibility problem. And it's fixable.</p>
+  </div>
+
+  <div class="copy-block">
+    <h2>Sound familiar?</h2>
+    <div class="pain-grid">
+      <div class="pain-card"><span>📉</span><div><h4>Invisible on the internet</h4><p>You post, you try ads, you get some likes — but actual customers aren't showing up.</p></div></div>
+      <div class="pain-card"><span>💸</span><div><h4>Burning budget on guesswork</h4><p>You've tried running ads yourself or hired someone cheap. The money's gone. The results aren't.</p></div></div>
+      <div class="pain-card"><span>😤</span><div><h4>Handed off to a junior</h4><p>The agency sold you the founder. You got an intern. Emails take days.</p></div></div>
+      <div class="pain-card"><span>🏃</span><div><h4>Competitors moving faster</h4><p>Similar brands, worse product — but they're everywhere. You know you should be growing faster.</p></div></div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content: center; padding-top: 20px;">
+    <a href="#" class="btn-primary">🎯 Get a free brand audit</a>
+    <a href="#" class="btn-outline">See how we fix this ↓</a>
+  </div>
+</section>
+<section class="page-section">
+  <div class="copy-block blue">
+    <h2>Most agencies scale by adding people<br>between you and results.<br><em>We scaled by removing them.</em></h2>
+    <p style="margin-top:12px;">At Ameya, there is no team. No layers. No account manager who "circles back." The founder handles your strategy, your campaigns, your calls — personally, every time.</p>
+  </div>
+
+  <div class="copy-block blue">
+    <div class="block-label blue">About</div>
+    <h2>7 years. 30+ brands.<br><em>One founder. All in.</em></h2>
+    <p>The founder behind Ameya has spent 7+ years in the trenches — building a digital marketing wing from scratch and driving growth across global markets. From Shopify builds to Meta campaigns with <strong>43% monthly growth</strong>, this isn't theory. It's a track record.</p>
+  </div>
+</section>
+<section class="page-section">
+  <div class="copy-block green">
+    <h2 style="color:#2E7D52;">Everything your brand needs.<br><em style="color:var(--crimson);">Nothing it doesn't.</em></h2>
+    <p style="margin-top:10px;">We're not a one-size-fits-all agency. We focus on brand identity, performance marketing, retention, and GTM strategy tailored for D2C growth.</p>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-tagline">We don't do average.<br><em>Neither should your brand.</em></p>
+  <p>© 2025 Ameya.agency · Mumbai, India</p>
+</footer>
+
+</body>
+</html>
